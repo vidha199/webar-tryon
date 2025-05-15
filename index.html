@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WebAR Virtual Try-On</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/ar.js/2.2.1/aframe/build/aframe-ar.js"></script>
+    <style>
+      body { margin: 0; overflow: hidden; font-family: Arial; }
+      h1 { position: absolute; top: 10px; left: 10px; color: white; z-index: 1; }
+    </style>
+  </head>
+  <body>
+    <h1>WebAR Try-On Demo</h1>
+    
+    <a-scene embedded arjs>
+      <!-- Camera -->
+      <a-marker preset="hiro">
+        <!-- Load 3D model -->
+        <a-entity 
+          gltf-model="https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Models/2.0/Duck/glTF/Duck.gltf" 
+          scale="0.05 0.05 0.05" 
+          rotation="0 180 0" 
+          position="0 0 0">
+        </a-entity>
+      </a-marker>
+      
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
